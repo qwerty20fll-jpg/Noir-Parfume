@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#10100f" />
+  <title>NOIR — парфюмерия</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="announcement">АРОМАТ — ЭТО ВАША ИСТОРИЯ <span>✦</span> ДОСТАВКА ПО ГОРОДУ</div>
+  <header class="header">
+    <a class="logo" href="#" aria-label="NOIR — главная">NOIR<span>.</span></a>
+    <nav class="nav">
+      <a href="#catalog">Каталог</a>
+      <a href="#about">О нас</a>
+      <a href="#contacts">Контакты</a>
+    </nav>
+    <div class="header-actions">
+      <button class="text-button" id="openAuth">Войти</button>
+      <button class="cart-trigger" id="openCart" aria-label="Открыть корзину">Корзина <span id="cartCount">0</span></button>
+      <button class="menu-toggle" id="menuToggle" aria-label="Открыть меню">☰</button>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-copy">
+        <p class="eyebrow"><span class="eyebrow-line"></span> КОЛЛЕКЦИЯ АРОМАТОВ</p>
+        <h1>Оставьте<br>свой <em>след.</em></h1>
+        <p class="hero-description">Парфюмерия с характером. Выразительные композиции для тех, кто не нуждается в лишних словах.</p>
+        <a class="primary-button" href="#catalog">Выбрать аромат <span>↗</span></a>
+        <div class="hero-note"><span class="note-dot"></span> Подобрано с вниманием к каждой ноте</div>
+      </div>
+      <div class="hero-art" aria-label="Декоративная композиция с флаконом парфюма">
+        <div class="art-glow"></div>
+        <div class="art-orbit orbit-one"></div><div class="art-orbit orbit-two"></div>
+        <div class="hero-bottle">
+          <div class="bottle-cap"></div><div class="bottle-neck"></div>
+          <div class="bottle-body"><div class="bottle-label"><small>EAU DE</small><strong>NOIR</strong><small>PARFUM</small></div></div>
+        </div>
+        <div class="art-caption caption-top">SCENT<br>IS MEMORY</div>
+        <div class="art-caption caption-bottom">№ 01 — SIGNATURE</div>
+        <div class="floating-star">✳</div>
+      </div>
+    </section>
+
+    <section class="catalog section-wrap" id="catalog">
+      <div class="section-heading">
+        <div><p class="eyebrow">НАША ПОДБОРКА</p><h2>Найди свой <em>аромат</em></h2></div>
+        <p class="section-subtitle">Каждый аромат — отдельное настроение.<br>Выберите то, что ближе именно вам.</p>
+      </div>
+      <div class="filters" role="group" aria-label="Фильтр ароматов">
+        <button class="filter active" data-filter="all">Все ароматы</button>
+        <button class="filter" data-filter="woody">Древесные</button>
+        <button class="filter" data-filter="floral">Цветочные</button>
+        <button class="filter" data-filter="fresh">Свежие</button>
+      </div>
+      <div class="product-grid" id="productGrid"></div>
+    </section>
+
+    <section class="about section-wrap" id="about">
+      <div class="about-mark">N.</div>
+      <div><p class="eyebrow">ФИЛОСОФИЯ NOIR</p><h2>Меньше шума.<br><em>Больше смысла.</em></h2></div>
+      <p class="about-text">Мы верим, что аромат не должен перекрикивать вас. Он должен дополнять, запоминаться и становиться частью личной истории.</p>
+    </section>
+
+    <section class="contact section-wrap" id="contacts">
+      <div><p class="eyebrow">ОСТАЛИСЬ ВОПРОСЫ?</p><h2>Поможем выбрать<br><em>ваш аромат.</em></h2></div>
+      <a class="primary-button" href="mailto:hello@noir.example">Написать нам <span>↗</span></a>
+    </section>
+  </main>
+
+  <footer class="footer"><a class="logo" href="#">NOIR<span>.</span></a><span>© 2026 NOIR PERFUMERY</span><span>АРОМАТ, КОТОРЫЙ ОСТАЁТСЯ</span></footer>
+
+  <div class="overlay" id="overlay"></div>
+  <aside class="cart-panel" id="cartPanel" aria-label="Корзина" aria-hidden="true">
+    <div class="panel-header"><div><p class="eyebrow">ВАШ ВЫБОР</p><h2>Корзина <span id="cartTitleCount">(0)</span></h2></div><button class="icon-button close-cart" aria-label="Закрыть">×</button></div>
+    <div class="cart-items" id="cartItems"></div>
+    <div class="cart-empty" id="cartEmpty"><span>✳</span><p>Пока здесь пусто</p><small>Добавьте аромат, который вам понравился.</small></div>
+    <div class="cart-summary"><div class="summary-line"><span>Подытог</span><strong id="subtotal">0 сом</strong></div><div class="summary-line"><span>Доставка</span><span>Стоимость уточняется</span></div><div class="summary-line total"><span>Итого</span><strong id="total">0 сом</strong></div><button class="primary-button checkout-button" id="checkout">Оформить заказ <span>↗</span></button><p class="fine-print">Демо-оплата: списание средств не выполняется.</p></div>
+  </aside>
+
+  <div class="modal payment-modal" id="paymentModal" role="dialog" aria-modal="true" aria-labelledby="paymentTitle" aria-hidden="true">
+    <button class="icon-button modal-close" id="closePayment" aria-label="Закрыть">×</button>
+    <div class="modal-symbol">N<span>.</span></div>
+    <p class="eyebrow">БЕЗОПАСНАЯ ОПЛАТА</p>
+    <h2 id="paymentTitle">Оплата<br><em>заказа.</em></h2>
+    <p class="modal-description">Выберите способ оплаты и подтвердите заказ.</p>
+    <div class="payment-methods" role="group" aria-label="Способ оплаты">
+      <button class="payment-method selected" type="button" data-payment-method="card" aria-pressed="true"><span class="payment-radio"></span><span><strong>Банковская карта</strong><small>Visa · Mastercard · Элкарт</small></span><span class="payment-card-icon">▰</span></button>
+      <button class="payment-method" type="button" data-payment-method="delivery" aria-pressed="false"><span class="payment-radio"></span><span><strong>При получении</strong><small>Картой или наличными курьеру</small></span><span class="payment-delivery-icon">⌁</span></button>
+    </div>
+    <div class="payment-total"><span>К оплате</span><strong id="paymentTotal">0 сом</strong></div>
+    <button class="primary-button payment-submit" id="payButton" type="button">Оплатить <span>↗</span></button>
+    <div class="payment-success" id="paymentSuccess" role="status" aria-live="polite" hidden><span class="success-check">✓</span><span><strong>Оплачено</strong><small>Демо-операция завершена успешно</small></span></div>
+    <p class="fine-print payment-note">Демонстрационный экран. Реальная оплата не проводится.</p>
+  </div>
+
+  <div class="modal" id="authModal" role="dialog" aria-modal="true" aria-labelledby="authTitle">
+    <button class="icon-button modal-close" id="closeAuth" aria-label="Закрыть">×</button>
+    <div class="modal-symbol">N<span>.</span></div>
+    <p class="eyebrow">ДОБРО ПОЖАЛОВАТЬ</p><h2 id="authTitle">Ваш мир<br><em>ароматов.</em></h2>
+    <p class="modal-description">Создайте аккаунт, чтобы сохранять любимые ароматы.</p>
+    <form id="authForm">
+      <label for="nameInput">Ваше имя</label><input id="nameInput" name="name" type="text" placeholder="Например, Анна" required minlength="2" autocomplete="name">
+      <label for="emailInput">Электронная почта</label><input id="emailInput" name="email" type="email" placeholder="name@example.com" required autocomplete="email">
+      <label for="passwordInput">Пароль</label><input id="passwordInput" name="password" type="password" placeholder="Минимум 6 символов" required minlength="6" autocomplete="new-password">
+      <button class="primary-button auth-submit" type="submit">Создать аккаунт <span>↗</span></button>
+      <p class="form-message" id="formMessage" aria-live="polite"></p>
+    </form>
+    <p class="fine-print">Демонстрационная регистрация: данные не отправляются на сервер.</p>
+  </div>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <script src="app.js"></script>
+</body>
+</html>

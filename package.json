@@ -1,0 +1,12 @@
+{
+  "name": "noir-perfume-store",
+  "version": "1.0.0",
+  "description": "Минималистичный демонстрационный магазин парфюмерии",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}
